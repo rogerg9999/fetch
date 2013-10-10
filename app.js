@@ -145,6 +145,14 @@ app.get('/', function(req, res){
 	});
 });
 
+app.get('/search/:q', function(req, res){
+	var query = req.params.q;
+	skull(query, function(data){
+		res.send(data);
+		res.end();
+	});
+});
+
 app.listen(3000);
 
 
